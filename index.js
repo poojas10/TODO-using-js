@@ -1,41 +1,11 @@
-// TOGGLE BUTTON
-// var arr=[]
-// function clickMe() {
-// //   if (document.querySelector("body").style.backgroundColor == "pink") {
-// //     document.querySelector("body").style.backgroundColor = "white";
-// //     document.querySelector("body").style.color = "gray";
-// //   } else {
-// //     document.querySelector("body").style.backgroundColor = "pink";
-// //     document.querySelector("body").style.color = "red";
-// //   }
-// var inputs = document.querySelector("input").value;
-// arr.push(inputs)
-
-//  document.querySelector("h1").innerHTML = arr
-
-//  document.querySelector("ul").lastElementChild.innerHTML = arr.filter(
-//      e => { return (e != "sleep" && e!= "netflix")
-//          }
-//  )
-// }
-
 var input = document.querySelector("input");
 // ADDING INPUT VALUE TO LIST
 function clickMe(e) {
-  if (e.keyCode === 13 || (e.type == "click") && input.value != "") {
+  if (e.keyCode === 13 || (e.type == "click" && input.value != "")) {
     e.preventDefault();
     var userInput = input.value;
-    // productives.push(userInput);
-    // var anchor = document.createElement("a");
     var list = document.createElement("li");
-    // list.textContent = userInput;
-    // anchor.appendChild(list)
-    // document.querySelector(".todo ol").appendChild(anchor);
-    //  var dels = document.createElement("button")
-    //  dels.className ="del"
-    // dels.textContent = 'del'
-    // document.querySelector(".todo ol").append(dels)
-  list.textContent = userInput;
+    list.textContent = userInput;
     // list.append(anchor);
     var deleteBtn = document.createElement("button");
     deleteBtn.className = "delete-list";
@@ -53,25 +23,6 @@ function themeChange() {
   document.querySelector("body").classList.toggle("hey");
 }
 
-// FILTERING PRODUCTIVE TASK FROM TODO
-// var productives = [];
-// function productive() {
-//   for (let i = 0; i < productives.length; i++) {
-//     if (
-//       productives != "sleep" &&
-//       productives != "netflix" &&
-//       productives != "binge"
-//     ) {
-//       var lists = document.createElement("li");
-//      lists.append(productives);
-//      document.querySelector(".productive-list").appendChild(lists)
-
-//     }
-//     productives.shift();
-//   }
-
-//   // document.querySelector("ul").appendChild(lists);
-// }
 // FUNCTIONS TO CALL WHEN PRESSED ENTER KEY
 function events(eventType, callback) {
   input.addEventListener(eventType, callback);
@@ -91,8 +42,7 @@ function clear(e) {
 function cb(e) {
   e.target.parentElement.classList.add("transition");
   // CALLING FUNCTION AND PASSING TARGET ELEMENT(DELETE BUTTON) AS ARGUEMENT
-  setTimeout(removeElement,1000,e.target)
-  // removeElement(e.target)
+  setTimeout(removeElement, 1000, e.target);
 }
 function removeElement(e) {
   // REMOVING TARGET'S i.e LI FROM HTML
@@ -100,6 +50,5 @@ function removeElement(e) {
 }
 
 function done(e) {
-    e.target.classList.add("task-done");
-  
+  e.target.classList.add("task-done");
 }
